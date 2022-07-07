@@ -18,7 +18,10 @@ Code for reproducing the results of the LDA based approach for doublet detection
 * DoubletDecon: Analysis performed in R 3.6.0. Installed from: https://github.com/EDePasquale/DoubletDecon. The *MainDoubletDecon* functions was used for labelling the doublets. Species set to *hsa*. Clustering was peformed in Seurat. Different proportions of doublets were allowed to be set with the *only50* parameter set to *false*. Further details: have a look at the R scripts for each dataset. 
 
 
+### LDA and entropy scoring 
+We test a two-step based procedure. In Step 1, LDA is used to decompose the original expression matrix. Next, in Step 2 entropy per cell is computed based on the topic-cells distributions. An entropy cut-off is used to determine if cells are doublets or singlets. 
 
+![Screenshot](doubletsMethodOverview.png)
 
 
 
