@@ -11,6 +11,9 @@ Code for reproducing the results of the LDA based approach for doublet detection
 * Cell Hashing Cell lines: A pre-processed dataset was downloaded from Seurat 3.1 and FASTQ files and processed data are also available from GEO under accession number: GSE108313.  Demultiplexing is based on the Seurat functionality, similarly to the Cell Hashing PBMCs. 
 
 
+* Synthetic data: 750 synthetic doublets were generated between randomly sampled singlets from the Seurat PBMCs dataset. Doublets were generated between T-cells and B-cells, B-cells and monocytes, T-cells and monocytes. This dataset was used to evaluate whether there is a shift in the entropy distributions between singlets (of each population in the doublets) and actual doublets. 
+
+
 ### Analysis with DoubletFinder and DoubletDecon
 
 * DoubletFinder: Analysis performed in R 3.6.0. Installed from: https://github.com/chris-mcginnis-ucsf/DoubletFinder. The functions compatible with Seurat v3 were used, *paramSweep_v3* and *doubletFinder_v3*. The first 10 principal components were used with paramSweep_v3. The number of generated artificial doublets, *pN* was kept to default, 25%. The output of the parameter sweep was used to determine the neighbourhood for doublet scoring, *pK*. This value is dataset specific. To illustrate the effect of the doublet rate on the results, different values were used for the Demuxlet PBMCs: 8%, 10.9%, 11.5%, 12.5%. Further details: have a look at the R scripts for each dataset. 
